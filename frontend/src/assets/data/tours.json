@@ -1,0 +1,132 @@
+[
+  {
+    "title": "Emy Jacob",
+    "city": "London",
+    "address": "Somewhere in London",
+    "distance": 300,
+    "price": 99,
+    "maxGroupSize": 10,
+    "desc": "Eat, Play, Cook with foodie private chef",
+    "reviews": [],
+
+    "photo": "/tour-images/tour-img01.jpg",
+    "featured": false
+  },
+  {
+    "title": "Lia",
+    "city": "London",
+    "address": "Somewhere in London",
+    "distance": 400,
+    "price": 99,
+    "maxGroupSize": 8,
+    "desc": "Discover the Enchanting Coastal Town",
+    "reviews": [],
+
+    "photo": "/tour-images/tour-img02.jpg",
+    "featured": false
+  },
+  {
+    "title": "Kiran",
+    "city": "Mangalore",
+    "address": "Somewhere in Mangalore",
+    "distance": 500,
+    "price": 99,
+    "maxGroupSize": 8,
+    "desc": "Explore the mesmerizing Cappadocia! Trekking, amazing stone landscapes, turkish food and more!",
+    "reviews": [],
+
+    "photo": "/tour-images/tour-img03.jpg",
+    "featured": false
+  },
+  {
+    "title": "Satya",
+    "city": "Kannur",
+    "address": "Somewhere in Kannur",
+    "distance": 500,
+    "price": 99,
+    "maxGroupSize": 8,
+    "desc": "Swimming with Elephants and Snorkeling",
+    "reviews": [],
+
+    "photo": "/tour-images/tour-img04.jpg",
+    "featured": false
+  },
+  {
+    "title": "Devi",
+    "city": "Bangalore",
+    "address": "Somewhere in Bangalore",
+    "distance": 500,
+    "price": 99,
+    "maxGroupSize": 8,
+    "desc": "7 days Lifetime Safari Trip ",
+    "reviews": [],
+
+    "photo": "/tour-images/tour-img05.jpg",
+    "featured": false
+  },
+  {
+    "title": "Soorya",
+    "city": "London",
+    "address": "Somewhere in London",
+    "distance": 500,
+    "price": 99,
+    "maxGroupSize": 8,
+    "desc": "Discover Jordan's Six Stunning ancient Roman cities with a local",
+    "reviews": [],
+
+    "photo": "/tour-images/tour-img06.jpg",
+    "featured": false
+  },
+  {
+    "title": "Peter",
+    "city": "Paris",
+    "address": "Somewhere in Paris",
+    "distance": 500,
+    "price": 99,
+    "maxGroupSize": 8,
+    "desc": "this is the description",
+    "reviews": [],
+
+    "photo": "/tour-images/tour-img07.jpg",
+    "featured": false
+  },
+  {
+    "title": "Jai",
+    "city": "Delhi",
+    "address": "Somewhere in Delhi",
+    "distance": 500,
+    "price": 99,
+    "maxGroupSize": 8,
+    "desc": "A week of Summer Lovin' in Goa: Exploring the Best of India's Beach Paradise",
+    "reviews": [],
+
+    "photo": "/tour-images/tour-img09.jpg",
+    "featured": false
+  },
+  {
+    "title": "Neha",
+    "city": "Lucknow",
+    "address": "Somewhere in Lucknow",
+    "distance": 100,
+    "price": 99,
+    "maxGroupSize": 5,
+    "desc": "this is the description",
+    "reviews": [],
+
+    "photo": "/tour-images/tour-img08.jpg",
+    "featured": false
+  },
+  {
+    "title": "SaiRam",
+    "city": "Chittagong",
+    "address": "Somewhere in Chittagong",
+    "distance": 500,
+    "price": 99,
+    "maxGroupSize": 8,
+    "desc": "this is the description",
+    "reviews": [],
+
+    "photo": "/tour-images/tour-img09.jpg",
+    "featured": false
+  }
+]
