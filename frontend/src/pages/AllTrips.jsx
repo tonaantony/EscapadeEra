@@ -42,18 +42,19 @@ const AllTrips = () => {
           'Authorization': `Bearer ${user.token}`,
         },
         body: JSON.stringify({
-          userId: user.userId,
-          fullName: user.fullName,
+          userId: user._id,
+          userName: user.username,
+          email: user.email,
         }),
       });
-
+  
       if (!response.ok) {
         throw new Error('Failed to join trip.');
       }
-
+  
       // Refresh the list of posted trips after joining
       fetchPostedTrips();
-      Navigate("/trip-posted");
+      Navigate("/joined-trip");
     } catch (error) {
       console.error('Error joining trip:', error);
     }

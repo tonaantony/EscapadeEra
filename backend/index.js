@@ -9,6 +9,7 @@ import authRoute from './routes/auth.js'
 import reviewRoute from './routes/reviews.js'
 import bookingRoute from './routes/bookings.js'
 import tripRoute from './routes/trips.js'
+import joinRoute from './routes/join.js'
 
 dotenv.config()
 const app = express()
@@ -41,6 +42,7 @@ app.use("/api/v1/users", userRoute)
 app.use("/api/v1/review", reviewRoute)
 app.use("/api/v1/booking", bookingRoute)
 app.use("/api/v1/trips", tripRoute);
+app.use("/api/v1/trips", joinRoute);
 
 
 app.listen(port, () => {

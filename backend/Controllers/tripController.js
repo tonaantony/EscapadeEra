@@ -37,3 +37,39 @@ export const getAllTrips = async (req, res) => {
     res.status(500).json({ error: 'An error occurred while fetching trips.' });
   }
 };
+
+// Join a trip
+export const joinTrip = async (req, res) => {
+  const { userId, userName, email } = req.body;
+  const tripId = req.params.tripId;
+
+  try {
+    const trip = await Trip.findById(tripId);
+
+    if (!trip) {
+      return res.status(404).json({ error: 'Trip not found.' });
+    }
+
+    // Check if the user is already a participant
+    const isParticipant = trip.participants.some(
+      (participant) => participant.user.toString() === userId
+    );
+
+    if (isParticipant) {
+      return res
+        .status(400)
+        .json({ error: 'User is already a participant in this trip.' });
+    }
+
+    // Add the user to the list of participants
+    trip.participants.push({ user: userId, userName, email });
+
+    // Save the updated trip with the new participant
+    await trip.save();
+
+    res.status(200).json({ message: 'User joined the trip successfully.' });
+  } catch (error) {
+    console.error('Error joining trip:', error);
+    res.status(500).json({ error: 'An error occurred while joining the trip.' });
+  }
+};

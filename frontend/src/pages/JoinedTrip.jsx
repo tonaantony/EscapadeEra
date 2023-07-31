@@ -1,9 +1,9 @@
 import React from 'react'
 import { Container, Row, Col, Button } from 'reactstrap'
 import { Link } from 'react-router-dom'
-import '../styles/trip-posted.css'
+import '../styles/joined-trip.css'
 
-const TripPosted = () => {
+const JoinedTrip = () => {
    return (
      <section>
        <Container>
@@ -15,7 +15,7 @@ const TripPosted = () => {
                </span>
                <h1 className="mb-3 fw-semibold">Thank You</h1>
                <h3 className="mb-4">
-                 Your trip is posted.
+                 You joined the trip successfully.
                </h3>
 
                <Button className="btn primary__btn w-25">
@@ -29,4 +29,4 @@ const TripPosted = () => {
    );
 }
 
-export default TripPosted;
+export default JoinedTrip;

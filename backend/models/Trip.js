@@ -6,6 +6,13 @@ const tripSchema = new mongoose.Schema({
   fromDate: { type: Date, required: true },
   toDate: { type: Date, required: true },
   description: { type: String, required: true },
+  participants: [
+    {
+      user: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
+      userName: { type: String, required: true },
+      email: { type: String, required: true },
+    },
+  ],
 });
 
 export default mongoose.model("Trip", tripSchema);

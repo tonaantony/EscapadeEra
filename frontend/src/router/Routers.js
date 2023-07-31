@@ -11,6 +11,7 @@ import MasonryImagesGallery from '../components/Image-gallery/MasonryImagesGalle
 import MyTrip from '../pages/MyTrip'
 import TripPosted from '../pages/TripPosted'
 import AllTrips from '../pages/AllTrips.jsx';
+import JoinedTrip from '../pages/JoinedTrip'
 
 const Routers = () => {
    return (
@@ -25,6 +26,7 @@ const Routers = () => {
          <Route path='/thank-you' element={<ThankYou/>} />
          <Route path='/trip-posted' element={<TripPosted/>} />
          <Route path='/all-trips' element={<AllTrips/>} />
+         <Route path='/joined-trip' element={<JoinedTrip/>} />
          <Route path='/tours/search' element={<SearchResultList/>} />
          <Route path='/gallery' element={<MasonryImagesGallery />} />
       </Routes>
