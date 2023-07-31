@@ -28,36 +28,36 @@ const AllTrips = () => {
   }, []);
 
   const Navigate = useNavigate();
-  // const handleJoinTrip = async (tripId) => {
-  //   try {
-  //     if (!user) {
-  //       // If the user is not logged in, redirect them to the login page
-  //       Navigate('/login'); // Replace with your login route
-  //       return;
-  //     }
-  //     const response = await fetch(`${BASE_URL}/trips/join/${tripId}`, {
-  //       method: 'POST',
-  //       headers: {
-  //         'Content-Type': 'application/json',
-  //         'Authorization': `Bearer ${user.token}`,
-  //       },
-  //       body: JSON.stringify({
-  //         userId: user.userId,
-  //         fullName: user.fullName,
-  //       }),
-  //     });
+  const handleJoinTrip = async (tripId) => {
+    try {
+      if (!user) {
+        // If the user is not logged in, redirect them to the login page
+        Navigate('/login'); // Replace with your login route
+        return;
+      }
+      const response = await fetch(`${BASE_URL}/trips/join/${tripId}`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${user.token}`,
+        },
+        body: JSON.stringify({
+          userId: user.userId,
+          fullName: user.fullName,
+        }),
+      });
 
-  //     if (!response.ok) {
-  //       throw new Error('Failed to join trip.');
-  //     }
+      if (!response.ok) {
+        throw new Error('Failed to join trip.');
+      }
 
-  //     // Refresh the list of posted trips after joining
-  //     fetchPostedTrips();
-  //     Navigate("/trip-posted");
-  //   } catch (error) {
-  //     console.error('Error joining trip:', error);
-  //   }
-  // };
+      // Refresh the list of posted trips after joining
+      fetchPostedTrips();
+      Navigate("/trip-posted");
+    } catch (error) {
+      console.error('Error joining trip:', error);
+    }
+  };
 
   return (
     <div className="all-trips-container">
