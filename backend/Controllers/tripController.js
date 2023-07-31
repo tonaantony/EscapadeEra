@@ -28,12 +28,12 @@ export const createTrip = async (req, res) => {
 
 
 // Get all posted trips
-// export const getAllTrips = async (req, res) => {
-//   try {
-//     const trips = await Trip.find();
-//     res.status(200).json(trips);
-//   } catch (error) {
-//     console.error('Error fetching trips:', error);
-//     res.status(500).json({ error: 'An error occurred while fetching trips.' });
-//   }
-// };
+export const getAllTrips = async (req, res) => {
+  try {
+    const trips = await Trip.find();
+    res.status(200).json(trips);
+  } catch (error) {
+    console.error('Error fetching trips:', error);
+    res.status(500).json({ error: 'An error occurred while fetching trips.' });
+  }
+};

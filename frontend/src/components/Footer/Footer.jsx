@@ -1,7 +1,7 @@
 import React from 'react'
 import './footer.css'
 import { Container, Row, Col, ListGroup, ListGroupItem } from 'reactstrap'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import logo from '../../assets/images/logo.png'
 
 const quick__links = [
@@ -37,8 +37,14 @@ const quick__links2 = [
 const Footer = () => {
    const year = new Date().getFullYear()
 
+   const location = useLocation();
+   const currentPath = location.pathname;
+   const pathsWithoutHeaderFooter = ['/login', '/register'];
+   const isPathWithoutHeaderFooter = pathsWithoutHeaderFooter.includes(currentPath);
+
    return (
-     <footer className="footer">
+    //  <footer className="footer">
+    <footer className={isPathWithoutHeaderFooter ? 'hidden' : 'footer'}>
        <Container>
          <Row>
            <Col lg="3">

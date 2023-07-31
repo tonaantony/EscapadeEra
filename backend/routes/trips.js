@@ -1,10 +1,9 @@
 import express from 'express';
-import { createTrip } from '../Controllers/tripController.js';
-// import { getAllTrips } from '../Controllers/tripController.js';
+import { createTrip, getAllTrips } from '../Controllers/tripController.js';
 
 const router = express.Router();
 // Handle form submission
 router.post('/', createTrip);
-// router.get('/',getAllTrips);
+router.get('/',getAllTrips);
 
 export default router;

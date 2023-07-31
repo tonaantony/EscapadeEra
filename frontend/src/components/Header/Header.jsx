@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useContext } from 'react'
 import { Container, Row, Button } from 'reactstrap'
-import { NavLink, Link, useNavigate } from 'react-router-dom'
+import { NavLink, Link, useNavigate, useLocation } from 'react-router-dom'
 import Logo from '../../assets/images/logo.png'
 import "./header.css"
 import { AuthContext } from '../../context/AuthContext'
@@ -16,7 +16,11 @@ const nav__links = [
    },
    {
       path:'/my-trip',
-      display:'My Trip'
+      display:'Post Trip'
+    },
+    {
+      path:'/all-trips',
+      display:'All Trips'
     },
 ]
 
@@ -25,6 +29,11 @@ const Header = () => {
    const menuRef = useRef(null)
    const navigate = useNavigate()
    const { user, dispatch } = useContext(AuthContext)
+
+   const location = useLocation();
+   const currentPath = location.pathname;
+   const pathsWithoutHeaderFooter = ['/login', '/register'];
+   const isPathWithoutHeaderFooter = pathsWithoutHeaderFooter.includes(currentPath);
 
    const logout = () => {
       dispatch({ type: 'LOGOUT' })
@@ -50,7 +59,8 @@ const Header = () => {
    const toggleMenu = () => menuRef.current.classList.toggle('show__menu')
 
    return (
-      <header className='header' ref={headerRef}>
+      // <header className='header' ref={headerRef}>
+      <header className={isPathWithoutHeaderFooter ? 'hidden' : 'header'}>
          <Container>
             <Row>
                <div className="nav__wrapper d-flex align-items-center justify-content-between">
@@ -80,8 +90,8 @@ const Header = () => {
                            user ? <> <h5 className='mb-0'>{user.username}</h5>
                                  <Button className='btn btn-dark' onClick={logout}>Logout</Button>
                               </> : <>
-                                 <Button className='btn secondary__btn'><Link to='/login'>Login</Link></Button>
-                                 <Button className='btn primary__btn'><Link to='/register'>Register</Link></Button>
+                                 {/* <Button className='btn secondary__btn'><Link to='/login'>Login</Link></Button>
+                                 <Button className='btn primary__btn'><Link to='/register'>Register</Link></Button> */}
                               </>
                         }
                         {/* <Button className='btn secondary__btn'><Link to='/login'>Login</Link></Button>

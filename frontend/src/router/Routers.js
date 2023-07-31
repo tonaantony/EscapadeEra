@@ -10,11 +10,12 @@ import Tours from './../pages/Tours'
 import MasonryImagesGallery from '../components/Image-gallery/MasonryImagesGallery'
 import MyTrip from '../pages/MyTrip'
 import TripPosted from '../pages/TripPosted'
+import AllTrips from '../pages/AllTrips.jsx';
 
 const Routers = () => {
    return (
       <Routes>
-         <Route path='/' element={<Navigate to='/home'/>} />
+         <Route path='/' element={<Navigate to='/login'/>} />
          <Route path='/home' element={<Home/>} />
          <Route path='/tours' element={<Tours/>} />
          <Route path="/my-trip" element={<MyTrip/>} />
@@ -23,6 +24,7 @@ const Routers = () => {
          <Route path='/register' element={<Register/>} />
          <Route path='/thank-you' element={<ThankYou/>} />
          <Route path='/trip-posted' element={<TripPosted/>} />
+         <Route path='/all-trips' element={<AllTrips/>} />
          <Route path='/tours/search' element={<SearchResultList/>} />
          <Route path='/gallery' element={<MasonryImagesGallery />} />
       </Routes>
