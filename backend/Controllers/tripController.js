@@ -1,4 +1,5 @@
 import Trip from '../models/Trip.js';
+import User from '../models/User.js';
 
 // Handle form submission
 export const createTrip = async (req, res) => {
@@ -66,6 +67,11 @@ export const joinTrip = async (req, res) => {
 
     // Save the updated trip with the new participant
     await trip.save();
+
+    // Update the user's document with the joined trip's ObjectId
+    const user = await User.findById(userId);
+    user.joinedTrips.push(tripId);
+    await user.save();
 
     res.status(200).json({ message: 'User joined the trip successfully.' });
   } catch (error) {

@@ -25,6 +25,12 @@ const userSchema = new mongoose.Schema(
       type: String,
       default: "user",
     },
+    joinedTrips: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Trip",
+      },
+    ],
   },
   { timestamps: true }
 );
