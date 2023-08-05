@@ -1,9 +1,10 @@
-import React, { useEffect, useRef, useContext } from 'react'
+import React, { useEffect, useRef, useContext, useState } from 'react'
 import { Container, Row, Button } from 'reactstrap'
 import { NavLink, Link, useNavigate, useLocation } from 'react-router-dom'
 import Logo from '../../assets/images/logo.png'
 import "./header.css"
 import { AuthContext } from '../../context/AuthContext'
+import UserProfileModal from '../../pages/UserProfileModal'
 
 const nav__links = [
    {
@@ -29,6 +30,8 @@ const Header = () => {
    const menuRef = useRef(null)
    const navigate = useNavigate()
    const { user, dispatch } = useContext(AuthContext)
+
+   const [showUserProfileModal, setShowUserProfileModal] = useState(false);
 
    const location = useLocation();
    const currentPath = location.pathname;
@@ -57,6 +60,10 @@ const Header = () => {
    })
 
    const toggleMenu = () => menuRef.current.classList.toggle('show__menu')
+
+   const toggleUserProfileModal = () => {
+      setShowUserProfileModal(!showUserProfileModal);
+    };
 
    return (
       // <header className='header' ref={headerRef}>
@@ -87,7 +94,9 @@ const Header = () => {
                   <div className="nav__right d-flex align-items-center gap-4">
                      <div className="nav__btns d-flex align-items-center gap-2">
                         {
-                           user ? <> <h5 className='mb-0'>{user.username}</h5>
+                           user ? <>
+                                 <h5 className="mb-0" onClick={toggleUserProfileModal}>
+                                 {user.username}</h5>
                                  <Button className='btn btn-dark' onClick={logout}>Logout</Button>
                               </> : <>
                                  {/* <Button className='btn secondary__btn'><Link to='/login'>Login</Link></Button>
@@ -101,6 +110,7 @@ const Header = () => {
                      <span className="mobile__menu" onClick={toggleMenu}>
                         <i class="ri-menu-line"></i>
                      </span>
+                     <UserProfileModal user={user} isOpen={showUserProfileModal} toggle={toggleUserProfileModal}/>
                   </div>
                </div>
             </Row>

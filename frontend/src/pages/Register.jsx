@@ -1,6 +1,6 @@
 import React, { useState, useContext } from 'react'
 import { Container, Row, Col, Form, FormGroup, Button } from 'reactstrap'
-import '../styles/login.css'
+import '../styles/register.css'
 import { Link, useNavigate } from 'react-router-dom'
 import registerImg from '../assets/images/login.png'
 import userIcon from '../assets/images/user.png'
@@ -10,8 +10,13 @@ import { BASE_URL } from '../utils/config'
 const Register = () => {
    const [credentials, setCredentials] = useState({
       userName: undefined,
+      fullname: undefined,
       email: undefined,
-      password: undefined
+      password: undefined,
+      age: undefined,
+      aadhar: undefined,
+      address: undefined,
+      photo: '',
    })
 
    const {dispatch} = useContext(AuthContext)
@@ -48,12 +53,12 @@ const Register = () => {
          <Container>
             <Row>
                <Col lg='8' className='m-auto'>
-                  <div className="login__container d-flex justify-content-between">
-                     <div className="login__img">
+                  <div className="register__container d-flex justify-content-between">
+                     <div className="register__img">
                         <img src={registerImg} alt="" />
                      </div>
 
-                     <div className="login__form">
+                     <div className="register__form">
                         <div className="user">
                            <img src={userIcon} alt="" />
                         </div>
@@ -61,13 +66,28 @@ const Register = () => {
 
                         <Form onSubmit={handleClick}>
                            <FormGroup>
-                              <input type="text" placeholder='Full Name' id='username' onChange={handleChange} required />
+                              <input type="text" placeholder='username' id='username' onChange={handleChange} required />
+                           </FormGroup>
+                           <FormGroup>
+                              <input type="text" placeholder='Full Name' id='fullname' onChange={handleChange} required />
                            </FormGroup>
                            <FormGroup>
                               <input type="email" placeholder='Email' id='email' onChange={handleChange} required />
                            </FormGroup>
                            <FormGroup>
                               <input type="password" placeholder='Password' id='password' onChange={handleChange} required />
+                           </FormGroup>
+                           <FormGroup>
+                              <input type="number" placeholder='Age' id='age' onChange={handleChange} required />
+                           </FormGroup>
+                           <FormGroup>
+                              <input type="text" placeholder='Aadhar Number' id='aadhar' onChange={handleChange} required />
+                           </FormGroup>
+                           <FormGroup>
+                              <input type="text" placeholder='Address' id='address' onChange={handleChange} required />
+                           </FormGroup>
+                           <FormGroup>
+                              <input type="text" placeholder='Photo URL' id='photo' onChange={handleChange} required />
                            </FormGroup>
                            <Button className='btn secondary__btn auth__btn' type='submit'>Create Account</Button>
                         </Form>

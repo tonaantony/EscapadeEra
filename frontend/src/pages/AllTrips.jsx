@@ -44,6 +44,7 @@ const AllTrips = () => {
         body: JSON.stringify({
           userId: user._id,
           userName: user.username,
+          fullName: user.fullname,
           email: user.email,
         }),
       });
@@ -62,7 +63,7 @@ const AllTrips = () => {
 
   return (
     <div className="all-trips-container">
-      <h1>All Posted Trips</h1>
+      <h2>All Posted Trips</h2>
       <div className="trip-cards-container">
         {postedTrips.map((trip) => (
           <div key={trip._id} className="trip-card">

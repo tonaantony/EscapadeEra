@@ -10,6 +10,7 @@ const tripSchema = new mongoose.Schema({
     {
       user: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
       userName: { type: String, required: true },
+      fullName: { type: String },
       email: { type: String, required: true },
     },
   ],
