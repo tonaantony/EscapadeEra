@@ -1,5 +1,3 @@
-
-
 .all-trips-container {
   text-align: center;
 }
@@ -51,4 +49,14 @@
   width: 50%;
   margin-left: auto;
   margin-right: auto;
+}
+
+.search__bar {
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+  width: max-content;
+  margin-top: 20px;
+  margin-left: auto; /* Center the search bar horizontally */
+  margin-right: auto; /* Center the search bar horizontally */
 }

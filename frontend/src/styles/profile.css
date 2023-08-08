@@ -1,0 +1,65 @@
+/* profile.css */
+
+/* Styling for the modal header */
+.modal-header {
+    background-color: #f0f0f0;
+    color: #333;
+    font-size: 20px;
+  }
+  
+  /* Styling for the modal body */
+  .modal-body {
+    padding: 20px;
+  }
+  
+  /* Styling for the user's photo */
+  .user-photo {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .user-photo img {
+    width: 30%;
+    max-height: 300px;
+    object-fit: cover;
+    
+  }
+  
+  /* Styling for the user details section */
+  .user-details {
+    border-top: 1px solid #ccc;
+    padding-top: 20px;
+  }
+  
+  .user-details table {
+    width: 100%;
+  }
+  
+  .user-details td {
+    padding: 5px 10px;
+  }
+  
+  .user-details label {
+    font-weight: bold;
+  }
+  
+  /* Styling for the modal footer */
+  .modal-footer {
+    background-color: #f0f0f0;
+    border-top: 1px solid #ccc;
+  }
+  
+  /* Styling for the "Close" button */
+  .modal-footer button {
+    font-size: 16px;
+    background-color:#faa935;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+  }
+  
+  .modal-footer button:hover {
+    background-color:#ff7e01 ;
+  }
+  

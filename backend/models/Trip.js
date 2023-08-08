@@ -6,11 +6,20 @@ const tripSchema = new mongoose.Schema({
   fromDate: { type: Date, required: true },
   toDate: { type: Date, required: true },
   description: { type: String, required: true },
+  userID:{ type: mongoose.Schema.Types.ObjectId, ref: 'User' },
   participants: [
     {
       user: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
       userName: { type: String, required: true },
       fullName: { type: String },
+      address: {
+        type: String,
+        required: true,
+      },
+      photo: {
+        type: String,
+        required: true,
+      },
       email: { type: String, required: true },
     },
   ],
