@@ -52,6 +52,7 @@ const AllTrips = () => {
   const Navigate = useNavigate();
   const handleJoinTrip = async (tripId) => {
     try {
+      console.log("THe user thing is",user)
       if (!user) {
         // If the user is not logged in, redirect them to the login page
         Navigate('/login'); // Replace with your login route
@@ -67,6 +68,8 @@ const AllTrips = () => {
           userId: user._id,
           userName: user.username,
           fullName: user.fullname,
+          address:user.address,
+          photo:user.photo,
           email: user.email,
         }),
       });

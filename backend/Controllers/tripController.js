@@ -4,7 +4,7 @@ import User from '../models/User.js';
 // Handle form submission
 export const createTrip = async (req, res) => {
   try {
-    const { fullName, location, from, to, description } = req.body;
+    const { fullName, location, from, to, description,userID } = req.body;
 
     console.log('Received form data:', req.body);
 
@@ -14,6 +14,7 @@ export const createTrip = async (req, res) => {
       fromDate: new Date(from),
       toDate: new Date(to),
       description,
+      userID,
     });
 
     await newTrip.save();
@@ -41,7 +42,7 @@ export const getAllTrips = async (req, res) => {
 
 // Join a trip
 export const joinTrip = async (req, res) => {
-  const { userId, userName, fullName, email } = req.body;
+  const { userId, userName, fullName, email,address,photo } = req.body;
   const tripId = req.params.tripId;
 
   try {
@@ -63,7 +64,7 @@ export const joinTrip = async (req, res) => {
     }
 
     // Add the user to the list of participants
-    trip.participants.push({ user: userId, userName, fullName, email });
+    trip.participants.push({ user: userId, userName, fullName, email,address,photo });
 
     // Save the updated trip with the new participant
     await trip.save();

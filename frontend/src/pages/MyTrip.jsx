@@ -36,6 +36,10 @@ const MyTrip = () => {
     e.preventDefault();
 
     try {
+      const userObject = localStorage.getItem('user');
+      const user=JSON.parse(userObject)
+      console.log(user._id); // Outputs: "John"
+      const userID=user._id
       const response = await fetch(`${BASE_URL}/trips/`, {
         method: 'POST',
         headers: {
@@ -48,6 +52,7 @@ const MyTrip = () => {
           from,
           to,
           description,
+          userID,
         }),
       });
 
