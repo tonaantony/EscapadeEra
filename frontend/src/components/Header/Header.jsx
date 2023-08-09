@@ -13,7 +13,7 @@ const nav__links = [
    },
    {
       path: '/tours',
-      display: 'Find your Buddy '
+      display: 'My Trips'
    },
    {
       path:'/my-trip',

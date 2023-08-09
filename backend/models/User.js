@@ -24,11 +24,6 @@ const userSchema = new mongoose.Schema(
       type: Number,
       required: true,
     },
-    aadhar: {
-      type: String,
-      required: true,
-      unique: true,
-    },
     address: {
       type: String,
       required: true,

@@ -10,7 +10,7 @@ import experienceImg from '../assets/images/experience.png'
 import Subtitle from './../shared/subtitle'
 import SearchBar from './../shared/SearchBar'
 import ServiceList from '../services/ServiceList'
-import FeaturedTourList from '../components/Featured-tours/FeaturedTourList'
+// import FeaturedTourList from '../components/Featured-tours/FeaturedTourList'
 import MasonryImagesGallery from '../components/Image-gallery/MasonryImagesGallery'
 import Testimonials from '../components/Testimonial/Testimonials'
 import NewsLetter from '../shared/Newsletter'
@@ -52,8 +52,6 @@ const Home = () => {
                      <img src={heroImg02} alt="" />
                   </div>
                </Col>
-
-               <SearchBar />
             </Row>
          </Container>
       </section>
@@ -73,7 +71,7 @@ const Home = () => {
       </section>
 
       {/* ========== FEATURED TOUR SECTION START ========== */}
-      <section>
+      {/* <section>
          <Container>
             <Row>
                <Col lg='12' className='mb-5'>
@@ -83,7 +81,7 @@ const Home = () => {
                <FeaturedTourList />
             </Row>
          </Container>
-      </section>
+      </section> */}
       {/* ========== FEATURED TOUR SECTION END =========== */}
 
       {/* ========== EXPERIENCE SECTION START ============ */}
