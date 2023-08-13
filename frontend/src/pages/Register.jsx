@@ -79,6 +79,9 @@ const Register = () => {
                            <FormGroup>
                               <input type="number" placeholder='Age' id='age' onChange={handleChange} required />
                            </FormGroup>
+                           {/* <FormGroup>
+                              <input type="text" placeholder='Aadhar Number' id='aadhar' onChange={handleChange} required />
+                           </FormGroup> */}
                            <FormGroup>
                               <input type="text" placeholder='Address' id='address' onChange={handleChange} required />
                            </FormGroup>

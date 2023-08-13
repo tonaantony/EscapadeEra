@@ -1,4 +1,3 @@
-
 import React, { useEffect, useContext, useState } from 'react';
 import { BASE_URL } from '../utils/config';
 import '../styles/all-trips.css';

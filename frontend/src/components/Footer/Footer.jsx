@@ -10,8 +10,8 @@ const quick__links = [
       display: 'Home'
    },
    {
-    path: '/gallery',
-    display: 'Gallery'
+      path: '/gallery',
+      display: 'Gallery'
    },
 ]
 

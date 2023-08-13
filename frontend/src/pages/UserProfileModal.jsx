@@ -7,6 +7,7 @@ const UserProfileModal = ({ user, isOpen, toggle }) => {
     return null;
   }
 
+
   return (
     <Modal isOpen={isOpen} toggle={toggle}>
       <ModalHeader toggle={toggle}>Profile Information</ModalHeader>
@@ -35,10 +36,10 @@ const UserProfileModal = ({ user, isOpen, toggle }) => {
                 <td><label>Age:</label></td>
                 <td>{user.age}</td>
               </tr>
-              <tr>
+              {/* <tr>
                 <td><label>Aadhar Number:</label></td>
                 <td>{user.aadhar}</td>
-              </tr>
+              </tr> */}
               <tr>
                 <td><label>Address:</label></td>
                 <td>{user.address}</td>
